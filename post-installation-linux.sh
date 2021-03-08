@@ -1,9 +1,15 @@
 #!/bin/bash
 
 echo "------- sudo passwd ---------"
-sudo passwd
+if ! sudo passwd; then
+    echo "Mudança de senha do sudo falhou"
+    exit
+fi
 echo "------- atualizando distro -------"
-sudo apt-get update && sudo apt-get upgrade
+if ! sudo apt-get update && sudo apt-get upgrade; then
+    echo "Atualização dos pacotes falhou"
+    exit
+fi
 echo "------- instalando programas --------"
 sudo apt-get install virtualbox qbittorrent git
 ## vscode
@@ -19,6 +25,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 ## spotify
 sudo apt-get install snap
 sudo snap install spotify
+
 
 sudo apt-get autoclean && sudo apt-get autoremove
 
