@@ -26,6 +26,11 @@ sudo apt-get install steam
 sudo apt-get install curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+## Lightshot
+
+wget http://app.prntscr.com/build/setup-lightshot.exe
+wine ./setup-lightshot.exe
+
 ## lutris
 
 sudo add-apt-repository ppa:lutris-team/lutris
@@ -70,7 +75,6 @@ sudo apt-get autoclean && sudo apt-get autoremove
 echo "Reiniciando pc"
 
 sleep 10
-
 
 ## Reiniciando
 sudo reboot -f
